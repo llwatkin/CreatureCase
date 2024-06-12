@@ -14,7 +14,7 @@ class Clues extends Phaser.GameObjects.GameObject {
             "Suspect "+scene.names[3]+" did not have a "+scene.colors[0]+" shirt.",
             "Suspect "+scene.names[2]+" was not holding the "+scene.items[1]+"."
         ];
-        this.clueText = scene.add.bitmapText(512, 100, 'text_white', this.clues[this.currClue], 40).setOrigin(0.5).setMaxWidth(900).setCenterAlign();
+        this.clueText = scene.add.bitmapText(512, 100, 'text_white', '', 40).setOrigin(0.5).setMaxWidth(900).setCenterAlign();
 
         // Buttons
         this.leftClueButton = scene.add.sprite(35, 100, 'arrowLeft_white').setScale(2.0).setInteractive({ useHandCursor: true })
@@ -59,6 +59,10 @@ class Clues extends Phaser.GameObjects.GameObject {
 
     get_clues() {
         return this.clues;
+    }
+
+    update_clue() {
+        this.clueText.setText(this.clues[this.currClue]);
     }
 
     show() {

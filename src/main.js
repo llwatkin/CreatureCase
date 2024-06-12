@@ -1,13 +1,10 @@
-// Jim Whitehead
-// Created: 4/14/2024
+// Lyle Watkins
+// Created: 6/10/2024
 // Phaser: 3.70.0
 //
-// Cubey
+// Creature Case
 //
-// An example of putting sprites on the screen using Phaser
-// 
-// Art assets from Kenny Assets "Shape Characters" set:
-// https://kenney.nl/assets/shape-characters
+// Game in which you're tasked with solving Perplexors-inspired puzzles.
 
 // debug with extreme prejudice
 "use strict"
@@ -27,8 +24,8 @@ let config = {
 }
 
 let tutorialComplete = false;
-let roundTime = 300; // 5 minutes
+const roundLength = 300; // 5 minutes
+let roundTime = roundLength; // Changes as you play
 let casesSolved = 0;
-var my = {sprite: {}, vfx: {}};
 
 const game = new Phaser.Game(config);

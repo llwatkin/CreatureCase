@@ -60,6 +60,7 @@ class Tutorial extends Phaser.GameObjects.GameObject {
                 scene.clues.show();
                 scene.timer.show();
                 scene.check.show();
+                scene.credits.show_button();
                 for (let panels of scene.suspectPanels) { panels.show_buttons(); }
                 // Start game
                 scene.roundActive = true;

@@ -39,7 +39,14 @@ class Timer extends Phaser.GameObjects.GameObject {
                     this.timerText.setText(this.format_time());
                 }
             } else { // When current time reaches 0
-                // TODO: Game over
+                // Game over
+                this.scene.sound.play('game_over');
+                this.scene.gameOver.show();
+                // Hide game elements
+                this.scene.timer.hide();
+                this.scene.clues.hide();
+                this.scene.check.hide();
+                for (let panels of this.scene.suspectPanels) { panels.close_all(); }
                 this.scene.roundActive = false;
             }
         }

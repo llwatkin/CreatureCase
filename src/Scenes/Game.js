@@ -65,6 +65,7 @@ class Game extends Phaser.Scene {
         // Game clues
         this.clues = new Clues(this, 'clues');
         this.shuffle(this.clues.get_clues()); // Shuffle clues
+        this.clues.update_clue(); // Set first clue
         this.clues.hide();
 
         // Timer
@@ -100,7 +101,14 @@ class Game extends Phaser.Scene {
             this.roundActive = true;
         }
 
-        // TODO: Game over & credits
+        // Game over screen
+        this.gameOver = new GameOver(this, 'gameOver');
+        this.gameOver.hide();
+
+        // Credits screen
+        this.credits = new Credits(this, 'credits');
+        this.credits.hide_credits();
+        this.credits.hide_button();
     }
 
     update() {

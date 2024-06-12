@@ -34,6 +34,8 @@ class Check extends Phaser.GameObjects.GameObject {
                 scene.roundActive = false; // Stop game
                 // Hide game elements
                 scene.clues.hide();
+                scene.credits.hide_button();
+                scene.credits.hide_credits();
                 this.hide();
                 for (let panels of scene.suspectPanels) { panels.close_all(); }
                 // Show win elements

@@ -81,6 +81,19 @@ class Suspect extends Phaser.GameObjects.GameObject {
         } else {
             this.animalMask.visible = true;
             this.animalMask.setTexture('animal_masks', newAnimal+'.png');
+            // Adjust animal mask fit
+            this.animalMask.y = this.y - 160;
+            if (newAnimal == "snake" || newAnimal == "walrus" || newAnimal == "buffalo") {
+                this.animalMask.y += 10;
+            } else if (newAnimal == "elephant") {
+                this.animalMask.y += 20;
+            } else if (newAnimal == "chicken") {
+                this.animalMask.y -= 10;
+            } else if (newAnimal == "dog" || newAnimal == "giraffe" || newAnimal == "moose" || newAnimal == "whale") {
+                this.animalMask.y -= 15;
+            } else if (newAnimal == "rabbit") {
+                this.animalMask.y -= 25;
+            }
         }
     }
 

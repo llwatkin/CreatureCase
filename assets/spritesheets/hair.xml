@@ -1,0 +1,129 @@
+<TextureAtlas imagePath="sheet.png">
+	<SubTexture name="color1_style1.png" x="979" y="524" width="158" height="119"/>
+	<SubTexture name="color1_style2.png" x="1454" y="119" width="158" height="138"/>
+	<SubTexture name="color1_style3.png" x="1454" y="1381" width="158" height="119"/>
+	<SubTexture name="color1_style4.png" x="1454" y="1262" width="158" height="119"/>
+	<SubTexture name="color1_style5.png" x="0" y="910" width="171" height="130"/>
+	<SubTexture name="color1_style6.png" x="1454" y="0" width="158" height="119"/>
+	<SubTexture name="color1_style7.png" x="1453" y="1922" width="158" height="119"/>
+	<SubTexture name="color1_style8.png" x="821" y="405" width="158" height="47"/>
+	
+	<SubTexture name="color1_style9.png" x="1453" y="1637" width="158" height="285"/>
+	<SubTexture name="color1_style10.png" x="501" y="227" width="160" height="227"/>
+	<SubTexture name="color1_style11.png" x="1298" y="690" width="158" height="286"/>
+	<SubTexture name="color1_style12.png" x="171" y="454" width="165" height="227"/>
+	<SubTexture name="color1_style13.png" x="336" y="908" width="164" height="213"/>
+	<SubTexture name="color1_style14.png" x="168" y="1466" width="168" height="213"/>
+
+	<SubTexture name="color2_style1.png" x="823" y="1087" width="159" height="119"/>
+	<SubTexture name="color2_style2.png" x="979" y="1206" width="159" height="138"/>
+	<SubTexture name="color2_style3.png" x="979" y="1344" width="159" height="119"/>
+	<SubTexture name="color2_style4.png" x="979" y="1463" width="159" height="119"/>
+	<SubTexture name="color2_style5.png" x="0" y="260" width="171" height="130"/>
+	<SubTexture name="color2_style6.png" x="979" y="1582" width="159" height="119"/>
+	<SubTexture name="color2_style7.png" x="979" y="1701" width="159" height="119"/>
+	<SubTexture name="color2_style8.png" x="634" y="2001" width="158" height="47"/>
+
+	<SubTexture name="color2_style9.png" x="1296" y="1114" width="158" height="285"/>
+	<SubTexture name="color2_style10.png" x="501" y="0" width="160" height="227"/>
+	<SubTexture name="color2_style11.png" x="1295" y="404" width="158" height="286"/>
+	<SubTexture name="color2_style12.png" x="336" y="227" width="165" height="227"/>
+	<SubTexture name="color2_style13.png" x="336" y="1334" width="164" height="213"/>
+	<SubTexture name="color2_style14.png" x="168" y="1040" width="168" height="213"/>
+
+	<SubTexture name="color3_style1.png" x="1138" y="1590" width="158" height="119"/>
+	<SubTexture name="color3_style2.png" x="1138" y="1452" width="158" height="138"/>
+	<SubTexture name="color3_style3.png" x="1137" y="1820" width="158" height="119"/>
+	<SubTexture name="color3_style4.png" x="1296" y="119" width="158" height="119"/>
+	<SubTexture name="color3_style5.png" x="0" y="650" width="171" height="130"/>
+	<SubTexture name="color3_style6.png" x="1295" y="1828" width="158" height="119"/>
+	<SubTexture name="color3_style7.png" x="982" y="1047" width="158" height="119"/>
+	<SubTexture name="color3_style8.png" x="476" y="2001" width="158" height="47"/>
+
+	<SubTexture name="color3_style9.png" x="982" y="762" width="158" height="285"/>
+	<SubTexture name="color3_style10.png" x="661" y="0" width="160" height="227"/>
+	<SubTexture name="color3_style11.png" x="1137" y="405" width="158" height="286"/>
+	<SubTexture name="color3_style12.png" x="336" y="0" width="165" height="227"/>
+	<SubTexture name="color3_style13.png" x="500" y="1121" width="164" height="213"/>
+	<SubTexture name="color3_style14.png" x="0" y="1040" width="168" height="213"/>
+
+	<SubTexture name="color4_style1.png" x="979" y="405" width="158" height="119"/>
+	<SubTexture name="color4_style2.png" x="979" y="1820" width="158" height="138"/>
+	<SubTexture name="color4_style3.png" x="980" y="0" width="158" height="119"/>
+	<SubTexture name="color4_style4.png" x="979" y="643" width="158" height="119"/>
+	<SubTexture name="color4_style5.png" x="0" y="130" width="171" height="130"/>
+	<SubTexture name="color4_style6.png" x="1296" y="1399" width="158" height="119"/>
+	<SubTexture name="color4_style7.png" x="1296" y="0" width="158" height="119"/>
+	<SubTexture name="color4_style8.png" x="661" y="1952" width="158" height="47"/>
+
+	<SubTexture name="color4_style9.png" x="1140" y="829" width="158" height="285"/>
+	<SubTexture name="color4_style10.png" x="661" y="227" width="160" height="227"/>
+	<SubTexture name="color4_style11.png" x="1138" y="1166" width="158" height="286"/>
+	<SubTexture name="color4_style12.png" x="336" y="454" width="165" height="227"/>
+	<SubTexture name="color4_style13.png" x="500" y="1334" width="164" height="213"/>
+	<SubTexture name="color4_style14.png" x="0" y="1466" width="168" height="213"/>
+
+	<SubTexture name="color5_style1.png" x="823" y="968" width="159" height="119"/>
+	<SubTexture name="color5_style2.png" x="820" y="1857" width="159" height="138"/>
+	<SubTexture name="color5_style3.png" x="820" y="1738" width="159" height="119"/>
+	<SubTexture name="color5_style4.png" x="820" y="1619" width="159" height="119"/>
+	<SubTexture name="color5_style5.png" x="0" y="390" width="171" height="130"/>
+	<SubTexture name="color5_style6.png" x="664" y="1215" width="159" height="119"/>
+	<SubTexture name="color5_style7.png" x="664" y="1096" width="159" height="119"/>
+	<SubTexture name="color5_style8.png" x="318" y="2001" width="158" height="47"/>
+
+	<SubTexture name="color5_style9.png" x="1138" y="0" width="158" height="285"/>
+	<SubTexture name="color5_style10.png" x="501" y="454" width="160" height="227"/>
+	<SubTexture name="color5_style11.png" x="980" y="119" width="158" height="286"/>
+	<SubTexture name="color5_style12.png" x="336" y="681" width="165" height="227"/>
+	<SubTexture name="color5_style13.png" x="336" y="1760" width="164" height="213"/>
+	<SubTexture name="color5_style14.png" x="168" y="1253" width="168" height="213"/>
+
+	<SubTexture name="color6_style1.png" x="664" y="858" width="159" height="119"/>
+	<SubTexture name="color6_style2.png" x="823" y="830" width="159" height="138"/>
+	<SubTexture name="color6_style3.png" x="821" y="286" width="159" height="119"/>
+	<SubTexture name="color6_style4.png" x="664" y="977" width="159" height="119"/>
+	<SubTexture name="color6_style5.png" x="0" y="780" width="171" height="130"/>
+	<SubTexture name="color6_style6.png" x="159" y="1892" width="159" height="119"/>
+	<SubTexture name="color6_style7.png" x="661" y="1833" width="159" height="119"/>
+	<SubTexture name="color6_style8.png" x="792" y="1999" width="158" height="47"/>
+
+	<SubTexture name="color6_style9.png" x="661" y="454" width="159" height="285"/>
+	<SubTexture name="color6_style10.png" x="500" y="1547" width="161" height="227"/>
+	<SubTexture name="color6_style11.png" x="661" y="1547" width="159" height="286"/>
+	<SubTexture name="color6_style12.png" x="171" y="681" width="165" height="227"/>
+	<SubTexture name="color6_style13.png" x="500" y="908" width="164" height="213"/>
+	<SubTexture name="color6_style14.png" x="0" y="1679" width="168" height="213"/>
+
+	<SubTexture name="color7_style1.png" x="1138" y="285" width="158" height="119"/>
+	<SubTexture name="color7_style2.png" x="1140" y="691" width="158" height="138"/>
+	<SubTexture name="color7_style3.png" x="1454" y="257" width="158" height="119"/>
+	<SubTexture name="color7_style4.png" x="1295" y="1709" width="158" height="119"/>
+	<SubTexture name="color7_style5.png" x="0" y="520" width="171" height="130"/>
+	<SubTexture name="color7_style6.png" x="1296" y="1518" width="158" height="119"/>
+	<SubTexture name="color7_style7.png" x="1296" y="238" width="158" height="119"/>
+	<SubTexture name="color7_style8.png" x="1296" y="357" width="158" height="47"/>
+
+	<SubTexture name="color7_style9.png" x="1453" y="404" width="158" height="285"/>
+	<SubTexture name="color7_style10.png" x="501" y="681" width="160" height="227"/>
+	<SubTexture name="color7_style11.png" x="1454" y="976" width="158" height="286"/>
+	<SubTexture name="color7_style12.png" x="171" y="0" width="165" height="227"/>
+	<SubTexture name="color7_style13.png" x="336" y="1121" width="164" height="213"/>
+	<SubTexture name="color7_style14.png" x="168" y="1679" width="168" height="213"/>
+
+	<SubTexture name="color8_style1.png" x="171" y="908" width="159" height="119"/>
+	<SubTexture name="color8_style2.png" x="820" y="692" width="159" height="138"/>
+	<SubTexture name="color8_style3.png" x="820" y="573" width="159" height="119"/>
+	<SubTexture name="color8_style4.png" x="661" y="739" width="159" height="119"/>
+	<SubTexture name="color8_style5.png" x="0" y="0" width="171" height="130"/>
+	<SubTexture name="color8_style6.png" x="0" y="1892" width="159" height="119"/>
+	<SubTexture name="color8_style7.png" x="820" y="454" width="159" height="119"/>
+	<SubTexture name="color8_style8.png" x="950" y="1995" width="158" height="47"/>
+
+	<SubTexture name="color8_style9.png" x="820" y="1334" width="159" height="285"/>
+	<SubTexture name="color8_style10.png" x="500" y="1774" width="161" height="227"/>
+	<SubTexture name="color8_style11.png" x="821" y="0" width="159" height="286"/>
+	<SubTexture name="color8_style12.png" x="171" y="227" width="165" height="227"/>
+	<SubTexture name="color8_style13.png" x="336" y="1547" width="164" height="213"/>
+	<SubTexture name="color8_style14.png" x="0" y="1253" width="168" height="213"/>
+</TextureAtlas>

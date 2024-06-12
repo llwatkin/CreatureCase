@@ -27,7 +27,7 @@ let config = {
 }
 
 let tutorialComplete = false;
-let roundTime = 600; // 10 minutes
+let roundTime = 300; // 5 minutes
 let casesSolved = 0;
 var my = {sprite: {}, vfx: {}};
 

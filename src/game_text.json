@@ -4,7 +4,7 @@
         "Click on circles to open up panels for each suspect",
         "These panels hold every possibility for each category",
         "Left click on a possibility to toggle elimination",
-        "Middle click on a possibility to assign/unassign it",
+        "Right click on a possibility to assign/unassign it",
         "If the timer runs out, it's game over",
         "Click the check mark to check your solution"
     ],

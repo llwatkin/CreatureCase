@@ -16,7 +16,7 @@ class Timer extends Phaser.GameObjects.GameObject {
     format_time() {
         let mins = Math.floor(this.currTime / 60);
         let secs = this.currTime % 60;
-        return mins+':'+secs+(secs < 10 ? '0' : '');
+        return mins+':'+(secs < 10 ? '0' : '')+secs;
     }
 
     show() {

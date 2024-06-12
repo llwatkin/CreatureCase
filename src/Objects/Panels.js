@@ -36,7 +36,7 @@ class Panels extends Phaser.GameObjects.GameObject {
                     icon.y = color.y;
                     icon.visible = true;
                     icon.active = true;
-                } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
+                } else if (pointer.button == 2) { // Right click assigns selected item to suspect
                     scene.sound.play('click_middle');
                     scene.sound.play('shirt');
                     if (color == this.color1) {
@@ -101,7 +101,7 @@ class Panels extends Phaser.GameObjects.GameObject {
                     icon.y = mask.y;
                     icon.visible = true;
                     icon.active = true;
-                } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
+                } else if (pointer.button == 2) { // Right click assigns selected item to suspect
                     scene.sound.play('click_middle');
                     scene.sound.play('mask');
                     if (mask == this.mask1) {
@@ -166,7 +166,7 @@ class Panels extends Phaser.GameObjects.GameObject {
                     icon.y = item.y;
                     icon.visible = true;
                     icon.active = true;
-                } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
+                } else if (pointer.button == 2) { // Right click assigns selected item to suspect
                     scene.sound.play('click_middle');
                     scene.sound.play('item');
                     if (item == this.item1) {

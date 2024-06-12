@@ -46,6 +46,8 @@ class Game extends Phaser.Scene {
         this.init();
 
         this.background = this.add.image(512, 300, 'background');
+
+        this.input.mouse.disableContextMenu(); // Disable right-click menu
         
         // Create all suspect game objects
         this.suspect1 = new Suspect(this, 'suspect', 112, 530, 1);

@@ -20,6 +20,7 @@ class Panels extends Phaser.GameObjects.GameObject {
             color.visible = false;
             color.on('pointerdown', (pointer) => {
                 if (pointer.button == 0) { // Left click adds an x
+                    scene.sound.play('click_left');
                     for (let icon of this.xGroup.getChildren()) {
                         if (icon.x == color.x && icon.y == color.y) { // If there's already an x
                             icon.x = 0;
@@ -36,6 +37,8 @@ class Panels extends Phaser.GameObjects.GameObject {
                     icon.visible = true;
                     icon.active = true;
                 } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
+                    scene.sound.play('click_middle');
+                    scene.sound.play('shirt');
                     if (color == this.color1) {
                         suspect.change_shirt(colors[0]);
                     } else if (color == this.color2) {
@@ -54,11 +57,13 @@ class Panels extends Phaser.GameObjects.GameObject {
 
         this.shirtPanelX = scene.add.sprite(x - 80, 500, 'x_grey').setInteractive({ useHandCursor: true })
             .on('pointerdown', () => { // Close panel
+                scene.sound.play('click_exit');
                 this.close_panel(this.shirtPanelX, this.shirtPanel, this.shirtPanelButton, this.colorOptions, 500, true);
             });
         this.shirtPanelX.visible = false;
         this.shirtPanelButton = scene.add.sprite(x - 80, 500, 'circle').setScale(0.75).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => { // Open panel
+                scene.sound.play('click_exit');
                 this.open_panel(this.shirtPanelX, this.shirtPanel, this.shirtPanelButton, this.colorOptions, 500);
             });
         
@@ -80,6 +85,7 @@ class Panels extends Phaser.GameObjects.GameObject {
             mask.visible = false;
             mask.on('pointerdown', (pointer) => {
                 if (pointer.button == 0) { // Left click adds an x
+                    scene.sound.play('click_left');
                     for (let icon of this.xGroup.getChildren()) {
                         if (icon.x == mask.x && icon.y == mask.y) { // If there's already an x
                             icon.x = 0;
@@ -96,6 +102,8 @@ class Panels extends Phaser.GameObjects.GameObject {
                     icon.visible = true;
                     icon.active = true;
                 } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
+                    scene.sound.play('click_middle');
+                    scene.sound.play('mask');
                     if (mask == this.mask1) {
                         suspect.change_mask(animals[0]);
                     } else if (mask == this.mask2) {
@@ -114,11 +122,13 @@ class Panels extends Phaser.GameObjects.GameObject {
 
         this.maskPanelX = scene.add.sprite(x - 80, 300, 'x_grey').setInteractive({ useHandCursor: true })
             .on('pointerdown', () => { // Close panel
+                scene.sound.play('click_exit');
                 this.close_panel(this.maskPanelX, this.maskPanel, this.maskPanelButton, this.maskOptions, 300, true);
             });
         this.maskPanelX.visible = false;
         this.maskPanelButton = scene.add.sprite(x - 80, 300, 'circle').setScale(0.75).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => { // Open panel
+                scene.sound.play('click_exit');
                 this.open_panel(this.maskPanelX, this.maskPanel, this.maskPanelButton, this.maskOptions, 300);
             });    
 
@@ -140,6 +150,7 @@ class Panels extends Phaser.GameObjects.GameObject {
             item.visible = false;
             item.on('pointerdown', (pointer) => {
                 if (pointer.button == 0) { // Left click adds an x
+                    scene.sound.play('click_left');
                     for (let icon of this.xGroup.getChildren()) {
                         if (icon.x == item.x && icon.y == item.y) { // If there's already an x
                             icon.x = 0;
@@ -156,6 +167,8 @@ class Panels extends Phaser.GameObjects.GameObject {
                     icon.visible = true;
                     icon.active = true;
                 } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
+                    scene.sound.play('click_middle');
+                    scene.sound.play('item');
                     if (item == this.item1) {
                         suspect.change_item(items[0]);
                     } else if (item == this.item2) {
@@ -174,11 +187,13 @@ class Panels extends Phaser.GameObjects.GameObject {
 
         this.itemPanelX = scene.add.sprite(x - 80, 220, 'x_grey').setInteractive({ useHandCursor: true })
             .on('pointerdown', () => { // Close panel
+                scene.sound.play('click_exit');
                 this.close_panel(this.itemPanelX, this.itemPanel, this.itemPanelButton, this.itemOptions, 220, true);
             });
         this.itemPanelX.visible = false;
         this.itemPanelButton = scene.add.sprite(x - 80, 220, 'circle').setScale(0.75).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => { // Open panel
+                scene.sound.play('click_exit');
                 this.open_panel(this.itemPanelX, this.itemPanel, this.itemPanelButton, this.itemOptions, 220);
             });
 

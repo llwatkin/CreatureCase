@@ -27,6 +27,8 @@ let config = {
 }
 
 let tutorialComplete = false;
+let roundTime = 600; // 10 minutes
+let casesSolved = 0;
 var my = {sprite: {}, vfx: {}};
 
 const game = new Phaser.Game(config);

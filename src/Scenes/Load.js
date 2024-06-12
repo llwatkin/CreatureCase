@@ -43,13 +43,27 @@ class Load extends Phaser.Scene {
         this.load.setPath('./assets/fonts/');
         this.load.bitmapFont('text_white', 'Kenney_Blocks.png', 'Kenney_Blocks.fnt');
         // Audio
-        
+        this.load.setPath('./assets/audio/');
+        this.load.audio('main_track', 'main_track.mp3');
+        this.load.audio('click_left', 'click_left.ogg');
+        this.load.audio('click_middle', 'click_middle.ogg');
+        this.load.audio('click_arrow', 'click_arrow.ogg');
+        this.load.audio('click_exit', 'click_exit.ogg');
+        this.load.audio('item', 'item.ogg');
+        this.load.audio('mask', 'mask.ogg');
+        this.load.audio('shirt', 'shirt.ogg');
+        this.load.audio('not_quite', 'not_quite.ogg');
+        this.load.audio('game_over', 'game_over.ogg');
+        this.load.audio('case_solved', 'case_solved.ogg');
+
         // JSON
         this.load.setPath('./src/');
         this.load.json('game_text', 'game_text.json');
     }
 
     create() {
+        // Play music
+        this.sound.add('main_track', { loop: true, volume: 0.2 }).play();
         // Go to game scene!
         this.scene.start('gameScene');
     }

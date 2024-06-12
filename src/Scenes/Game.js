@@ -6,12 +6,11 @@ class Game extends Phaser.Scene {
     init() {
         // Game variables
         this.roundActive = false;
-        this.roundTime = 600;
         this.timeCount = 60; // Used to count time for the in-game timer
         this.timeCounter = this.timeCount;
         this.popupTime = 60; // Used to count time for text pop-ups
         this.popupCounter = this.popupTime;
-        this.currTime = this.roundTime;
+        this.currTime = roundTime;
         this.currTutorial = 0;
         this.currClue = 0;
 
@@ -87,6 +86,7 @@ class Game extends Phaser.Scene {
         // Buttons
         this.leftClueButton = this.add.sprite(35, 100, 'arrowLeft_white').setScale(2.0).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
+                this.sound.play('click_arrow');
                 this.leftClueButton.setScale(1.5);
                 this.leftClueButton.setTexture('arrowLeft_darkGrey');
                 this.currClue--;
@@ -105,6 +105,7 @@ class Game extends Phaser.Scene {
         this.leftClueButton.visible = false;
         this.rightClueButton = this.add.sprite(989, 100, 'arrowRight_white').setScale(2.0).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
+                this.sound.play('click_arrow');
                 this.rightClueButton.setScale(1.5);
                 this.rightClueButton.setTexture('arrowRight_darkGrey');
                 this.currClue++;
@@ -128,20 +129,24 @@ class Game extends Phaser.Scene {
         this.winText.visible = false;
         this.checkButton = this.add.sprite(990, 30, 'check_white').setScale(2.0).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
+                this.sound.play('click_arrow');
                 this.checkButton.setScale(1.5);
                 this.checkButton.setTexture('check_darkGrey');
                 // Check solution
                 for (let items of this.solution) {
                     let suspectNum = this.names[this.solution.indexOf(items)]-1;
                     let suspect = this.suspects[suspectNum];
-                    if (items[0] != suspect.get_shirt() || items[1] != suspect.get_mask() || items[2] != suspect.get_item()) { 
+                    if (items[0] != suspect.get_shirt() || items[1] != suspect.get_mask() || items[2] != suspect.get_item()) {
+                        this.sound.play('not_quite');
                         this.checkText.visible = true;
                         this.popupCounter = this.popupTime;
                         return; 
                     }
                 }
                 // If this part has been reached, solution is correct
+                this.sound.play('case_solved');
                 console.log("solution correct");
+                casesSolved++;
                 // Hide game elements
                 this.roundActive = false;
                 this.clueText.visible = false;
@@ -169,9 +174,11 @@ class Game extends Phaser.Scene {
         this.nextCaseText = this.add.bitmapText(900, 35, 'text_white', "Next Case", 30).setOrigin(0.5).setCenterAlign();
         this.nextCaseButton = this.add.sprite(990, 35, 'arrowRight_white').setScale(3.0).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
+                this.sound.play('click_arrow');
                 this.nextCaseButton.setScale(2.5);
                 this.nextCaseButton.setTexture('arrowRight_darkGrey');
                 // Reload scene
+                roundTime = this.currTime + 100;
                 this.scene.restart();
             })
             .on('pointerover', () => { this.nextCaseButton.setTexture('arrowRight_grey'); })
@@ -193,9 +200,7 @@ class Game extends Phaser.Scene {
             this.suspect1Panels, this.suspect2Panels, this.suspect3Panels,
             this.suspect4Panels, this.suspect5Panels
         ];
-        for (let panels of this.suspectPanels) {
-            panels.hide_buttons();
-        }
+        for (let panels of this.suspectPanels) { panels.hide_buttons(); }
 
         // Tutorial
         if (!tutorialComplete) {
@@ -210,6 +215,7 @@ class Game extends Phaser.Scene {
             this.description = this.add.bitmapText(512, 400, 'text_white', tutorialDesc[0], 30).setMaxWidth(400).setOrigin(0.5).setCenterAlign();
             this.leftButton = this.add.sprite(300, 300, 'arrowLeft_white').setScale(2.0).setInteractive({ useHandCursor: true })
                 .on('pointerdown', () => {
+                    this.sound.play('click_arrow');
                     this.leftButton.setScale(1.5);
                     this.leftButton.setTexture('arrowLeft_darkGrey');
                     this.rightButton.visible = true;
@@ -230,6 +236,7 @@ class Game extends Phaser.Scene {
             this.leftButton.visible = false;
             this.rightButton = this.add.sprite(724, 300, 'arrowRight_white').setScale(2.0).setInteractive({ useHandCursor: true })
                 .on('pointerdown', () => {
+                    this.sound.play('click_arrow');
                     this.rightButton.setScale(1.5);
                     this.rightButton.setTexture('arrowRight_darkGrey');
                     this.leftButton.visible = true;
@@ -249,6 +256,7 @@ class Game extends Phaser.Scene {
                 });
             this.xButton = this.add.sprite(750, 65, 'x_grey').setScale(2.0).setInteractive({ useHandCursor: true })
                 .on('pointerdown', () => {
+                    this.sound.play('click_exit');
                     tutorialComplete = true;
                     // Hide tutorial
                     this.bigPanel.visible = false;
@@ -266,9 +274,7 @@ class Game extends Phaser.Scene {
                     this.leftClueButton.visible = true;
                     this.rightClueButton.visible = true;
                     this.checkButton.visible = true;
-                    for (let panels of this.suspectPanels) {
-                        panels.show_buttons();
-                    }
+                    for (let panels of this.suspectPanels) { panels.show_buttons(); }
                     // Start game
                     this.roundActive = true;
                 });
@@ -279,9 +285,7 @@ class Game extends Phaser.Scene {
             this.leftClueButton.visible = true;
             this.rightClueButton.visible = true;
             this.checkButton.visible = true;
-            for (let panels of this.suspectPanels) {
-                panels.show_buttons();
-            }
+            for (let panels of this.suspectPanels) { panels.show_buttons(); }
             // Start game
             this.roundActive = true;
         }

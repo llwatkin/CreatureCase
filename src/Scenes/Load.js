@@ -5,10 +5,18 @@ class Load extends Phaser.Scene {
 
     preload() {
         // ------- Load All Assets ------- //
-        this.load.setPath('./assets/');
+        // Images
+        this.load.setPath('./assets/images/');
         this.load.image('background', 'background.jpg');
-        this.load.setPath('./assets/spritesheets');
+        this.load.image('clue', 'clue.png');
+        this.load.image('check', 'check.png');
+        this.load.image('panel', 'panel.png');
+        this.load.image('item', 'item.png');
+        this.load.image('suspect', 'suspect.png');
+        this.load.image('timer', 'timer.png');
+        this.load.image('x', 'x.png');
         // Spritesheets
+        this.load.setPath('./assets/spritesheets');
         this.load.atlasXML('skin', 'skin.png', 'skin.xml');
         this.load.atlasXML('faces', 'faces.png', 'faces.xml');
         this.load.atlasXML('hair', 'hair.png', 'hair.xml');

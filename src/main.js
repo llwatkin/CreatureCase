@@ -26,6 +26,7 @@ let config = {
     fps: { forceSetTimeOut: true, target: 60 }
 }
 
+let tutorialComplete = false;
 var my = {sprite: {}, vfx: {}};
 
 const game = new Phaser.Game(config);

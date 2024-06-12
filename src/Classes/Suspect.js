@@ -4,16 +4,21 @@ class Suspect extends Phaser.GameObjects.GameObject {
         this.x = x;
         this.y = y;
 
+        // Variables used for animation
         this.torsoDirection = -1;
         this.handsDirection = -1;
+        this.itemDirection = -1;
         this.speed = 0.05;
         this.torsoMoveTime = Math.floor(Math.random() * 60) + 30;
         this.torsoMoveCounter = this.torsoMoveTime;
         this.handsMoveTime = Math.floor(Math.random() * 60) + 30;
         this.handsMoveCounter = this.handsMoveTime;
+        this.itemMoveTime = Math.floor(Math.random() * 60) + 30;
+        this.itemMoveCounter = this.itemMoveTime;
         
-        this.shirtStyle = 1;
-        // Add all sprites for all body parts/clothing
+        this.shirtStyle = 1; // Save shirt style in a variable so it stays consistent when shirt color changes
+
+        // Body parts/clothing
         this.neck = scene.add.sprite(x, y - 75, 'skin', 'tint1_neck.png');
         this.head = scene.add.sprite(x, y - 160, 'skin', 'tint1_head.png');
         this.leftBrow = scene.add.sprite(x - 32, y - 180, 'faces', 'brow_color1_style1.png');
@@ -26,6 +31,7 @@ class Suspect extends Phaser.GameObjects.GameObject {
         this.shirt = scene.add.sprite(x, y, 'shirts', 'shirt_white_style'+this.shirtStyle+'.png');
         this.hair = scene.add.sprite(x, y - 200, 'hair', 'color1_style1.png');
 
+        // Mask/item
         this.animalMask = scene.add.sprite(x, y - 160, 'animal_masks', 'bear.png').setScale(1.2);
         this.item = scene.add.sprite(x, y - 320, 'items', 'mug.png').setScale(0.9);
         this.animalMask.visible = false;
@@ -88,6 +94,9 @@ class Suspect extends Phaser.GameObjects.GameObject {
     }
 
     randomize() {
+        // Hide mask and item
+        this.animalMask.visible = false;
+        this.item.visible = false;
         // Get random integers for all sprite keys
         let rand_skin = Math.floor(Math.random() * 8) + 1;
         let rand_browStyle = Math.floor(Math.random() * 3) + 1;
@@ -99,10 +108,11 @@ class Suspect extends Phaser.GameObjects.GameObject {
         let rand_hairStyle = Math.floor(Math.random() * 14) + 1;
         let rand_shirtStyle = Math.floor(Math.random() * 8) + 1; // Base shirt color for all characters is white
         this.shirtStyle = rand_shirtStyle; // Save shirt style for color changes
+        // Fix any incompatibilities
         if (rand_skin >= 3 && rand_hairColor == 6) { 
             while (rand_hairColor == 6) {
                 rand_hairColor = Math.floor(Math.random() * 8) + 1;
-            } 
+            }
         }
         if (rand_hairStyle == 8 && (rand_shirtStyle == 4 || rand_shirtStyle == 8)) {
             while (rand_shirtStyle == 4 || rand_shirtStyle == 8) {
@@ -171,5 +181,13 @@ class Suspect extends Phaser.GameObjects.GameObject {
         this.rightHand.y += this.speed * this.handsDirection;
         this.board.y += this.speed * this.handsDirection;
         this.name.y += this.speed * this.handsDirection;
+
+        // Item rises and falls
+        this.itemMoveCounter--;
+        if (this.itemMoveCounter == 0) {
+            this.itemMoveCounter = this.itemMoveTime;
+            this.itemDirection *= -1;
+        }
+        this.item.y += this.speed * this.itemDirection;
     }
 }

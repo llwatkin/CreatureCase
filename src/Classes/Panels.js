@@ -19,7 +19,7 @@ class Panels extends Phaser.GameObjects.GameObject {
         for (let color of this.colorOptions) {
             color.visible = false;
             color.on('pointerdown', (pointer) => {
-                if (pointer.button == 0) { // Left click
+                if (pointer.button == 0) { // Left click adds an x
                     for (let icon of this.xGroup.getChildren()) {
                         if (icon.x == color.x && icon.y == color.y) { // If there's already an x
                             icon.x = 0;
@@ -29,12 +29,13 @@ class Panels extends Phaser.GameObjects.GameObject {
                             return;
                         }
                     }
+                    // If there is no x, add one
                     let icon = this.xGroup.getFirstDead();
                     icon.x = color.x;
                     icon.y = color.y;
                     icon.visible = true;
                     icon.active = true;
-                } else if (pointer.button == 1) { // Middle click
+                } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
                     if (color == this.color1) {
                         suspect.change_shirt(colors[0]);
                     } else if (color == this.color2) {
@@ -78,7 +79,7 @@ class Panels extends Phaser.GameObjects.GameObject {
         for (let mask of this.maskOptions) {
             mask.visible = false;
             mask.on('pointerdown', (pointer) => {
-                if (pointer.button == 0) { // Left click
+                if (pointer.button == 0) { // Left click adds an x
                     for (let icon of this.xGroup.getChildren()) {
                         if (icon.x == mask.x && icon.y == mask.y) { // If there's already an x
                             icon.x = 0;
@@ -88,12 +89,13 @@ class Panels extends Phaser.GameObjects.GameObject {
                             return;
                         }
                     }
+                    // If there is no x, add one
                     let icon = this.xGroup.getFirstDead();
                     icon.x = mask.x;
                     icon.y = mask.y;
                     icon.visible = true;
                     icon.active = true;
-                } else if (pointer.button == 1) { // Middle click
+                } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
                     if (mask == this.mask1) {
                         suspect.change_mask(animals[0]);
                     } else if (mask == this.mask2) {
@@ -137,7 +139,7 @@ class Panels extends Phaser.GameObjects.GameObject {
         for (let item of this.itemOptions) {
             item.visible = false;
             item.on('pointerdown', (pointer) => {
-                if (pointer.button == 0) { // Left click
+                if (pointer.button == 0) { // Left click adds an x
                     for (let icon of this.xGroup.getChildren()) {
                         if (icon.x == item.x && icon.y == item.y) { // If there's already an x
                             icon.x = 0;
@@ -147,12 +149,13 @@ class Panels extends Phaser.GameObjects.GameObject {
                             return;
                         }
                     }
+                    // If there is no x, add one
                     let icon = this.xGroup.getFirstDead();
                     icon.x = item.x;
                     icon.y = item.y;
                     icon.visible = true;
                     icon.active = true;
-                } else if (pointer.button == 1) { // Middle click
+                } else if (pointer.button == 1) { // Middle click assigns selected item to suspect
                     if (item == this.item1) {
                         suspect.change_item(items[0]);
                     } else if (item == this.item2) {

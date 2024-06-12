@@ -1,4 +1,14 @@
 {
+    "TutorialDescriptions": [
+        "Click on arrows to cycle through clues",
+        "Click on circles to open up panels for each suspect",
+        "These panels hold every possible selection for each category",
+        "Left click on a possibility to toggle elimination",
+        "Middle click on a possibility to assign/unassign it",
+        "If the timer runs out, you lose",
+        "Click the check mark to check your solution"
+    ],
+
     "AnimalMasks": [
         "bear", "buffalo", "chick", "chicken", "cow", "crocodile", "dog", "duck", "elephant", "frog", "giraffe", "goat", "gorilla",
         "hippo", "horse", "monkey", "moose", "narwhal", "owl", "panda", "parrot", "penguin", "pig", "rabbit", "rhino", "sloth",

@@ -255,28 +255,32 @@ class Panels extends Phaser.GameObjects.GameObject {
         this.close_panel(this.itemPanelX, this.itemPanel, this.itemPanelButton, this.itemOptions, 220, false);
     }
 
-    hide_panel(xIcon, panel, button, options) {
+    hide_panel(xIcon, panel, button, options, y) {
         if (xIcon.visible == true) {
             this.prevOpen.push(xIcon);
             this.prevOpen.push(panel);
+            xIcon.visible = false;
+            panel.visible = false;
             for (let option of options) {
                 this.prevOpen.push(option);
+                option.visible = false;
+            }
+            for (let icon of this.xGroup.getChildren()) {
+                if (icon.y == y) { 
+                    this.prevOpen.push(icon);
+                    icon.visible = false; 
+                }
             }
         } else {
             this.prevOpen.push(button);
-        }
-        xIcon.visible = false;
-        panel.visible = false;
-        button.visible = false;
-        for (let option of options) {
-            option.visible = false;
+            button.visible = false;
         }
     }
     
     hide_all() {
-        this.hide_panel(this.shirtPanelX, this.shirtPanel, this.shirtPanelButton, this.colorOptions);
-        this.hide_panel(this.maskPanelX, this.maskPanel, this.maskPanelButton, this.maskOptions);
-        this.hide_panel(this.itemPanelX, this.itemPanel, this.itemPanelButton, this.itemOptions);
+        this.hide_panel(this.shirtPanelX, this.shirtPanel, this.shirtPanelButton, this.colorOptions, 500);
+        this.hide_panel(this.maskPanelX, this.maskPanel, this.maskPanelButton, this.maskOptions, 300);
+        this.hide_panel(this.itemPanelX, this.itemPanel, this.itemPanelButton, this.itemOptions, 200);
     }
 
     show_all() {

@@ -8,14 +8,14 @@ class Timer extends Phaser.GameObjects.GameObject {
         this.currTime = roundTime;
 
         this.timerBackground = scene.add.image(510, -12, 'panel_large').setScale(1.3);
-        this.timerText = scene.add.bitmapText(512, 20, 'text_white', this.format_time(), 60).setOrigin(0.5).setCenterAlign();
+        this.timerText = scene.add.bitmapText(512, 20, 'text_white', this.format_time(this.currTime), 60).setOrigin(0.5).setCenterAlign();
 
         return this;
     }
 
-    format_time() {
-        let mins = Math.floor(this.currTime / 60);
-        let secs = this.currTime % 60;
+    format_time(time) {
+        let mins = Math.floor(time / 60);
+        let secs = time % 60;
         return mins+':'+(secs < 10 ? '0' : '')+secs;
     }
 
@@ -36,7 +36,7 @@ class Timer extends Phaser.GameObjects.GameObject {
                 if (this.timeCounter == 0) {
                     this.timeCounter = this.second;
                     this.currTime--; // Subtract 1 second from current time
-                    this.timerText.setText(this.format_time());
+                    this.timerText.setText(this.format_time(this.currTime));
                 }
             } else { // When current time reaches 0
                 // Game over

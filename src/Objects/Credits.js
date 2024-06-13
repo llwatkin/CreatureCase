@@ -24,7 +24,6 @@ class Credits extends Phaser.GameObjects.GameObject {
                 scene.clues.show();
                 scene.timer.show();
                 scene.check.show();
-                for (let panels of scene.suspectPanels) { panels.show_buttons(); }
                 // Start game
                 scene.roundActive = true;
             });

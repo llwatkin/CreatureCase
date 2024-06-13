@@ -32,19 +32,36 @@ class Game extends Phaser.Scene {
             this.possibleItems.splice(rand_item, 1); // Remove this from the possibilities (no duplicates allowed)
         }
 
-        // This solution will always be the same for the set of clues I use
-        this.solution = [
+        // This solutions will always be the same for their correspponding clue sets
+        this.solutions = [
+            [
             [this.colors[4], this.animals[3], this.items[4]], // Suspect at names index 0
             [this.colors[3], this.animals[2], this.items[0]], // Suspect at names index 1
             [this.colors[2], this.animals[4], this.items[3]], // ect.
             [this.colors[1], this.animals[1], this.items[2]],
             [this.colors[0], this.animals[0], this.items[1]]
+            ],
+            [
+            [this.colors[3], this.animals[2], this.items[2]],
+            [this.colors[2], this.animals[4], this.items[1]],
+            [this.colors[0], this.animals[0], this.items[3]],
+            [this.colors[4], this.animals[3], this.items[4]],
+            [this.colors[1], this.animals[1], this.items[0]]
+            ],
+            [
+            [this.colors[0], this.animals[0], this.items[2]],
+            [this.colors[1], this.animals[4], this.items[0]],
+            [this.colors[2], this.animals[1], this.items[3]],
+            [this.colors[4], this.animals[2], this.items[4]],
+            [this.colors[3], this.animals[3], this.items[1]]
+            ]
         ];
+
+        // Choose a random puzzle
+        this.puzzle = Math.floor(Math.random() * this.solutions.length);
     }
 
     create() {
-        this.init();
-
         this.background = this.add.image(512, 300, 'background');
 
         this.input.mouse.disableContextMenu(); // Disable right-click menu
@@ -89,18 +106,6 @@ class Game extends Phaser.Scene {
         ];
         for (let panels of this.suspectPanels) { panels.hide_buttons(); }
 
-        // Tutorial
-        if (!tutorialComplete) {
-            this.tutorial = new Tutorial(this, 'tutorial');
-        } else { // If the tutorial has already been completed, show game elements and start game
-            this.clues.show();
-            this.timer.show();
-            this.check.show();
-            for (let panels of this.suspectPanels) { panels.show_buttons(); }
-            // Start game
-            this.roundActive = true;
-        }
-
         // Game over screen
         this.gameOver = new GameOver(this, 'gameOver');
         this.gameOver.hide();
@@ -109,6 +114,19 @@ class Game extends Phaser.Scene {
         this.credits = new Credits(this, 'credits');
         this.credits.hide_credits();
         this.credits.hide_button();
+
+        // Tutorial
+        if (!tutorialComplete) {
+            this.tutorial = new Tutorial(this, 'tutorial');
+        } else { // If the tutorial has already been completed, show game elements and start game
+            this.clues.show();
+            this.timer.show();
+            this.check.show();
+            this.credits.show_button();
+            for (let panels of this.suspectPanels) { panels.show_buttons(); }
+            // Start game
+            this.roundActive = true;
+        }
     }
 
     update() {

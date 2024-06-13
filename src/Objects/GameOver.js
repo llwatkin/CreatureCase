@@ -6,7 +6,7 @@ class GameOver extends Phaser.GameObjects.GameObject {
         // Text
         this.title = scene.add.bitmapText(512, 100, 'text_white', "Game Over", 70).setOrigin(0.5).setCenterAlign();
         this.subtitle = scene.add.bitmapText(512, 150, 'text_white', "Time ran out", 50).setOrigin(0.5).setCenterAlign();
-        this.description = scene.add.bitmapText(512, 300, 'text_white', "You solved "+casesSolved+" cases", 40).setMaxWidth(400).setOrigin(0.5).setCenterAlign();
+        this.description = scene.add.bitmapText(512, 300, 'text_white', "Cases solved: "+casesSolved, 40).setMaxWidth(400).setOrigin(0.5).setCenterAlign();
         this.restartText = scene.add.bitmapText(640, 500, 'text_white', "Restart", 35).setMaxWidth(400).setOrigin(0.5).setCenterAlign();
         // Button
         this.restartButton = scene.add.sprite(720, 500, 'arrowRight_white').setScale(3.0).setInteractive({ useHandCursor: true })

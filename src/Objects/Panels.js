@@ -252,4 +252,5 @@ class Panels extends Phaser.GameObjects.GameObject {
         this.close_panel(this.maskPanelX, this.maskPanel, this.maskPanelButton, this.maskOptions, 300, false);
         this.close_panel(this.itemPanelX, this.itemPanel, this.itemPanelButton, this.itemOptions, 220, false);
     }
+
 }

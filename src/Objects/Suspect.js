@@ -89,7 +89,7 @@ class Suspect extends Phaser.GameObjects.GameObject {
                 this.animalMask.y += 20;
             } else if (newAnimal == "chicken") {
                 this.animalMask.y -= 10;
-            } else if (newAnimal == "dog" || newAnimal == "giraffe" || newAnimal == "moose" || newAnimal == "whale") {
+            } else if (newAnimal == "dog" || newAnimal == "giraffe" || newAnimal == "moose" || newAnimal == "whale" || newAnimal == "narwhal") {
                 this.animalMask.y -= 15;
             } else if (newAnimal == "rabbit") {
                 this.animalMask.y -= 25;

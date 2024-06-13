@@ -24,6 +24,7 @@ class Credits extends Phaser.GameObjects.GameObject {
                 scene.clues.show();
                 scene.timer.show();
                 scene.check.show();
+                for (let panels of scene.suspectPanels) { panels.show_all(); }
                 // Start game
                 scene.roundActive = true;
             });
@@ -32,6 +33,13 @@ class Credits extends Phaser.GameObjects.GameObject {
                 scene.sound.play('click_exit');
                 this.hide_button();
                 this.show_credits();
+                // Hide game elements and pause game
+                scene.clues.hide();
+                scene.timer.hide();
+                scene.check.hide();
+                for (let panels of scene.suspectPanels) { panels.hide_all(); }
+                scene.roundActive = false;
+
             });
         this.openText = scene.add.bitmapText(80, 20, 'text_white', "Credits", 30).setOrigin(0.5).setCenterAlign();
 

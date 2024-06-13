@@ -208,6 +208,8 @@ class Panels extends Phaser.GameObjects.GameObject {
             visible: false
         });
 
+        this.prevOpen = []; // Array to store previously open panels (to re-show after hidden)
+
         return this;
     }
 
@@ -253,4 +255,34 @@ class Panels extends Phaser.GameObjects.GameObject {
         this.close_panel(this.itemPanelX, this.itemPanel, this.itemPanelButton, this.itemOptions, 220, false);
     }
 
+    hide_panel(xIcon, panel, button, options) {
+        if (xIcon.visible == true) {
+            this.prevOpen.push(xIcon);
+            this.prevOpen.push(panel);
+            for (let option of options) {
+                this.prevOpen.push(option);
+            }
+        } else {
+            this.prevOpen.push(button);
+        }
+        xIcon.visible = false;
+        panel.visible = false;
+        button.visible = false;
+        for (let option of options) {
+            option.visible = false;
+        }
+    }
+    
+    hide_all() {
+        this.hide_panel(this.shirtPanelX, this.shirtPanel, this.shirtPanelButton, this.colorOptions);
+        this.hide_panel(this.maskPanelX, this.maskPanel, this.maskPanelButton, this.maskOptions);
+        this.hide_panel(this.itemPanelX, this.itemPanel, this.itemPanelButton, this.itemOptions);
+    }
+
+    show_all() {
+        for (let element of this.prevOpen) {
+            element.visible = true;
+        }
+        this.prevOpen = []; // Empty the previosuly open array
+    }
 }

@@ -46,6 +46,7 @@ class Timer extends Phaser.GameObjects.GameObject {
                 this.scene.timer.hide();
                 this.scene.clues.hide();
                 this.scene.check.hide();
+                this.scene.credits.hide_button();
                 for (let panels of this.scene.suspectPanels) { panels.close_all(); }
                 this.scene.roundActive = false;
             }

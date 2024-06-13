@@ -86,6 +86,7 @@ class Check extends Phaser.GameObjects.GameObject {
 
     hide() {
         this.checkButton.visible = false;
+        this.wrongText.visible = false;
     }
 
     update() {

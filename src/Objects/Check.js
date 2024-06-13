@@ -19,11 +19,11 @@ class Check extends Phaser.GameObjects.GameObject {
                 this.checkButton.setScale(1.5);
                 this.checkButton.setTexture('check_darkGrey');
                 // Check solution
-                for (let items of scene.solutions[scene.puzzle]) {
-                    let suspectNum = scene.names[scene.solutions[scene.puzzle].indexOf(items)]-1;
+                for (let solution of scene.solutions[scene.puzzle]) {
+                    let suspectNum = scene.names[scene.solutions[scene.puzzle].indexOf(solution)]-1;
                     let suspect = scene.suspects[suspectNum];
                     // If any part of the solution is not right
-                    if (items[0] != suspect.get_shirt() || items[1] != suspect.get_mask() || items[2] != suspect.get_item()) {
+                    if (solution[0] != suspect.get_shirt() || solution[1] != suspect.get_mask() || solution[2] != suspect.get_item()) {
                         scene.sound.play('not_quite');
                         this.wrongText.visible = true;
                         this.popupCounter = this.popupTime;

@@ -16,44 +16,44 @@ class Game extends Phaser.Scene {
         this.shuffle(this.colors); // Shirt colors in random order
 
         // Copy the animal mask and item arrays from the JSON file
-        this.possibleAnimals = [...this.gameText.AnimalMasks];
-        this.possibleItems = [...this.gameText.Items];
+        let masksCopy = [...this.gameText.Masks];
+        let itemsCopy = [...this.gameText.Items];
         // Fill the following arrays using these copied arrays
-        this.animals = [];
+        this.masks = [];
         this.items = [];
         for (let i = 0; i < 5; i++) {
             // Pick a random animal
-            let rand_animal = Math.floor(Math.random() * this.possibleAnimals.length);
-            this.animals[i] = this.possibleAnimals[rand_animal];
-            this.possibleAnimals.splice(rand_animal, 1); // Remove this from the possibilities (no duplicates allowed)
+            let rand_animal = Math.floor(Math.random() * masksCopy.length);
+            this.masks[i] = masksCopy[rand_animal];
+            masksCopy.splice(rand_animal, 1); // Remove this from the possibilities (no duplicates allowed)
             // Pick a random item
-            let rand_item = Math.floor(Math.random() * this.possibleItems.length);
-            this.items[i] = this.possibleItems[rand_item];
-            this.possibleItems.splice(rand_item, 1); // Remove this from the possibilities (no duplicates allowed)
+            let rand_item = Math.floor(Math.random() * itemsCopy.length);
+            this.items[i] = itemsCopy[rand_item];
+            itemsCopy.splice(rand_item, 1); // Remove this from the possibilities (no duplicates allowed)
         }
 
         // This solutions will always be the same for their correspponding clue sets
         this.solutions = [
             [
-            [this.colors[4], this.animals[3], this.items[4]], // Suspect at names index 0
-            [this.colors[3], this.animals[2], this.items[0]], // Suspect at names index 1
-            [this.colors[2], this.animals[4], this.items[3]], // ect.
-            [this.colors[1], this.animals[1], this.items[2]],
-            [this.colors[0], this.animals[0], this.items[1]]
+            [this.colors[4], this.masks[3], this.items[4]], // Suspect at names index 0
+            [this.colors[3], this.masks[2], this.items[0]], // Suspect at names index 1
+            [this.colors[2], this.masks[4], this.items[3]], // ect.
+            [this.colors[1], this.masks[1], this.items[2]],
+            [this.colors[0], this.masks[0], this.items[1]]
             ],
             [
-            [this.colors[3], this.animals[2], this.items[2]],
-            [this.colors[2], this.animals[4], this.items[1]],
-            [this.colors[0], this.animals[0], this.items[3]],
-            [this.colors[4], this.animals[3], this.items[4]],
-            [this.colors[1], this.animals[1], this.items[0]]
+            [this.colors[3], this.masks[2], this.items[2]],
+            [this.colors[2], this.masks[4], this.items[1]],
+            [this.colors[0], this.masks[0], this.items[3]],
+            [this.colors[4], this.masks[3], this.items[4]],
+            [this.colors[1], this.masks[1], this.items[0]]
             ],
             [
-            [this.colors[0], this.animals[0], this.items[2]],
-            [this.colors[1], this.animals[4], this.items[0]],
-            [this.colors[2], this.animals[1], this.items[3]],
-            [this.colors[4], this.animals[2], this.items[4]],
-            [this.colors[3], this.animals[3], this.items[1]]
+            [this.colors[0], this.masks[0], this.items[2]],
+            [this.colors[1], this.masks[4], this.items[0]],
+            [this.colors[2], this.masks[1], this.items[3]],
+            [this.colors[4], this.masks[2], this.items[4]],
+            [this.colors[3], this.masks[3], this.items[1]]
             ]
         ];
 
@@ -93,12 +93,19 @@ class Game extends Phaser.Scene {
         this.check = new Check(this, 'check');
         this.check.hide();
 
+        // Copy and shuffle color, mask, and item arrays
+        let colorsCopy = [...this.colors];
+        let masksCopy = [...this.masks];
+        let itemsCopy = [...this.items];
+        this.shuffle(colorsCopy);
+        this.shuffle(masksCopy);
+        this.shuffle(itemsCopy);
         // Suspect panel objects
-        this.suspect1Panels = new Panels(this, 'panels', this.suspect1, this.colors, this.animals, this.items, 112);
-        this.suspect2Panels = new Panels(this, 'panels', this.suspect2, this.colors, this.animals, this.items, 312);
-        this.suspect3Panels = new Panels(this, 'panels', this.suspect3, this.colors, this.animals, this.items, 512);
-        this.suspect4Panels = new Panels(this, 'panels', this.suspect4, this.colors, this.animals, this.items, 712);
-        this.suspect5Panels = new Panels(this, 'panels', this.suspect5, this.colors, this.animals, this.items, 912);
+        this.suspect1Panels = new Panels(this, 'panels', this.suspect1, colorsCopy, masksCopy, itemsCopy, 112);
+        this.suspect2Panels = new Panels(this, 'panels', this.suspect2, colorsCopy, masksCopy, itemsCopy, 312);
+        this.suspect3Panels = new Panels(this, 'panels', this.suspect3, colorsCopy, masksCopy, itemsCopy, 512);
+        this.suspect4Panels = new Panels(this, 'panels', this.suspect4, colorsCopy, masksCopy, itemsCopy, 712);
+        this.suspect5Panels = new Panels(this, 'panels', this.suspect5, colorsCopy, masksCopy, itemsCopy, 912);
         // Array to hold panels
         this.suspectPanels = [
             this.suspect1Panels, this.suspect2Panels, this.suspect3Panels,
@@ -127,6 +134,9 @@ class Game extends Phaser.Scene {
             // Start game
             this.roundActive = true;
         }
+
+        // Keys
+        this.qKey = this.input.keyboard.addKey("Q");
     }
 
     update() {
@@ -134,6 +144,13 @@ class Game extends Phaser.Scene {
         this.timer.update();
         this.check.update();
         for (let suspect of this.suspects) { suspect.update(); }
+
+        // O key press opens all suspect panels
+        if (Phaser.Input.Keyboard.JustDown(this.qKey)) {
+            for (let panels of this.suspectPanels) {
+                panels.open_all();
+            }
+        }
     }
 
     // Randomly shuffles an input array

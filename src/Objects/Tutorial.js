@@ -10,8 +10,8 @@ class Tutorial extends Phaser.GameObjects.GameObject {
         this.tutorialImages = ['clue', 'suspect', 'panel', 'x', 'item', 'timer', 'check'];
         this.tutorialDesc = scene.gameText.TutorialDescriptions; // Grab the tutorial descriptions from the JSON file
 
-        this.tutorialImage = scene.add.image(512, 300, this.tutorialImages[0]);
-        this.description = scene.add.bitmapText(512, 400, 'text_white', this.tutorialDesc[0], 30).setMaxWidth(400).setOrigin(0.5).setCenterAlign();
+        this.tutorialImage = scene.add.image(512, 300, this.tutorialImages[0]).setScale(1.7);
+        this.description = scene.add.bitmapText(512, 450, 'text_white', this.tutorialDesc[0], 32).setMaxWidth(400).setOrigin(0.5).setCenterAlign();
         this.leftButton = scene.add.sprite(300, 300, 'arrowLeft_white').setScale(2.0).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
                 scene.sound.play('click_arrow');
@@ -52,7 +52,7 @@ class Tutorial extends Phaser.GameObjects.GameObject {
             });
         this.xButton = scene.add.sprite(750, 65, 'x_grey').setScale(2.0).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
-                scene.sound.play('click_exit');
+                scene.sound.play('click_soft');
                 tutorialComplete = true;
                 // Hide tutorial
                 this.hide();

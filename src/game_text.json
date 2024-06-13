@@ -1,15 +1,15 @@
 {
     "TutorialDescriptions": [
         "Click on arrows to cycle through clues",
-        "Click on circles to open up panels for each suspect",
+        "Click on circles or press 'Q' to open up panels for each suspect",
         "These panels hold every possibility for each category",
         "Left click on a possibility to toggle elimination",
-        "Right click on a possibility to assign/unassign it",
+        "Right click on a possibility to assign/unassign it for current suspect",
         "If the timer runs out, it's game over",
         "Click the check mark to check your solution"
     ],
 
-    "AnimalMasks": [
+    "Masks": [
         "bear", "buffalo", "chick", "chicken", "cow", "crocodile", "dog", "duck", "elephant", "frog", "giraffe", "goat", "gorilla",
         "hippo", "horse", "monkey", "moose", "narwhal", "owl", "panda", "parrot", "penguin", "pig", "rabbit", "rhino", "sloth",
         "snake", "walrus", "whale", "zebra"

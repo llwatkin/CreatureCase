@@ -48,7 +48,17 @@ class Timer extends Phaser.GameObjects.GameObject {
                 this.scene.check.hide();
                 this.scene.credits.hide_button();
                 for (let panels of this.scene.suspectPanels) { panels.close_all(); }
+                // Stop game
                 this.scene.roundActive = false;
+                // Show correct solution
+                for (let solution of this.scene.solutions[this.scene.puzzle]) {
+                    let suspectNum = this.scene.names[this.scene.solutions[this.scene.puzzle].indexOf(solution)]-1;
+                    let suspect = this.scene.suspects[suspectNum];
+                    // Assign correct shirt, mask, & items to each suspect
+                    suspect.change_shirt(solution[0]);
+                    suspect.change_mask(solution[1]);
+                    suspect.change_item(solution[2]);
+                }
             }
         }
     }

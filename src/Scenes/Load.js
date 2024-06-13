@@ -45,10 +45,10 @@ class Load extends Phaser.Scene {
         // Audio
         this.load.setPath('./assets/audio/');
         this.load.audio('main_track', 'main_track.mp3');
-        this.load.audio('click_left', 'click_left.ogg');
-        this.load.audio('click_middle', 'click_middle.ogg');
+        this.load.audio('click_x', 'click_x.ogg');
+        this.load.audio('click_assign', 'click_assign.ogg');
         this.load.audio('click_arrow', 'click_arrow.ogg');
-        this.load.audio('click_exit', 'click_exit.ogg');
+        this.load.audio('click_soft', 'click_soft.ogg');
         this.load.audio('item', 'item.ogg');
         this.load.audio('mask', 'mask.ogg');
         this.load.audio('shirt', 'shirt.ogg');

@@ -7,33 +7,33 @@ class Clues extends Phaser.GameObjects.GameObject {
         this.currClue = 0;
         this.clues = [
             [
-            "The suspect that wore the "+scene.animals[0]+" mask had a "+scene.colors[0]+" shirt.",
+            "The suspect that wore the "+scene.masks[0]+" mask had a "+scene.colors[0]+" shirt.",
             "Suspects "+scene.names[0]+" and "+scene.names[1]+" did not have "+scene.colors[0]+" or "+scene.colors[1]+" shirts and neither held the "+scene.items[1]+".",
-            "The suspect that wore the "+scene.animals[1]+" mask had a "+scene.colors[1]+" shirt and held the "+scene.items[2]+".",
-            "Suspect "+scene.names[2]+" had a "+scene.colors[2]+" shirt and did not wear the "+scene.animals[2]+" or the "+scene.animals[3]+" mask.",
-            "The suspect that wore the "+scene.animals[2]+" mask held the "+scene.items[0]+".",
+            "The suspect that wore the "+scene.masks[1]+" mask had a "+scene.colors[1]+" shirt and held the "+scene.items[2]+".",
+            "Suspect "+scene.names[2]+" had a "+scene.colors[2]+" shirt and did not wear the "+scene.masks[2]+" or the "+scene.masks[3]+" mask.",
+            "The suspect that wore the "+scene.masks[2]+" mask held the "+scene.items[0]+".",
             "Suspect "+scene.names[0]+" did not have a "+scene.colors[3]+" shirt and did not hold the "+scene.items[0]+" or the "+scene.items[3]+".",
             "Suspect "+scene.names[3]+" did not have a "+scene.colors[0]+" shirt.",
             "Suspect "+scene.names[2]+" did not hold the "+scene.items[1]+"."
             ],
             [
             "The suspect that wore a "+scene.colors[0]+" shirt held the "+scene.items[3]+".",
-            "Suspects "+scene.names[0]+" and "+scene.names[3]+" did not hold the "+scene.items[0]+" or "+scene.items[3]+" and neither wore the "+scene.animals[0]+" mask.",
-            "The suspect that wore a "+scene.colors[1]+" shirt wore the "+scene.animals[1]+" mask and held the "+scene.items[0]+".",
+            "Suspects "+scene.names[0]+" and "+scene.names[3]+" did not hold the "+scene.items[0]+" or "+scene.items[3]+" and neither wore the "+scene.masks[0]+" mask.",
+            "The suspect that wore a "+scene.colors[1]+" shirt wore the "+scene.masks[1]+" mask and held the "+scene.items[0]+".",
             "Suspect "+scene.names[1]+" held the "+scene.items[1]+" and did not have a "+scene.colors[3]+" or "+scene.colors[4]+" shirt.",
-            "The suspect that wore a "+scene.colors[4]+" shirt wore the "+scene.animals[3]+" mask.",
-            "Suspect "+scene.names[0]+" did not hold the "+scene.items[4]+" and did not wear the "+scene.animals[4]+" or the "+scene.animals[3]+" mask.",
+            "The suspect that wore a "+scene.colors[4]+" shirt wore the "+scene.masks[3]+" mask.",
+            "Suspect "+scene.names[0]+" did not hold the "+scene.items[4]+" and did not wear the "+scene.masks[4]+" or the "+scene.masks[3]+" mask.",
             "Suspect "+scene.names[4]+" did not hold the "+scene.items[3]+".",
-            "Suspect "+scene.names[1]+" did not wear the "+scene.animals[0]+" mask."
+            "Suspect "+scene.names[1]+" did not wear the "+scene.masks[0]+" mask."
             ],
             [
-            "The suspect that held the "+scene.items[4]+" wore the "+scene.animals[2]+" mask.",
-            "Suspects "+scene.names[4]+" and "+scene.names[0]+" did not wear the "+scene.animals[4]+" or "+scene.animals[2]+" masks and neither had a "+scene.colors[4]+" shirt.",
-            "The suspect that held the "+scene.items[0]+" had a "+scene.colors[1]+" shirt and wore the "+scene.animals[4]+" mask.",
-            "Suspect "+scene.names[2]+" wore the "+scene.animals[1]+" mask and did not hold the "+scene.items[1]+" or the "+scene.items[2]+" .",
+            "The suspect that held the "+scene.items[4]+" wore the "+scene.masks[2]+" mask.",
+            "Suspects "+scene.names[4]+" and "+scene.names[0]+" did not wear the "+scene.masks[4]+" or "+scene.masks[2]+" masks and neither had a "+scene.colors[4]+" shirt.",
+            "The suspect that held the "+scene.items[0]+" had a "+scene.colors[1]+" shirt and wore the "+scene.masks[4]+" mask.",
+            "Suspect "+scene.names[2]+" wore the "+scene.masks[1]+" mask and did not hold the "+scene.items[1]+" or the "+scene.items[2]+" .",
             "The suspect that held the "+scene.items[2]+" had a "+scene.colors[0]+" shirt.",
-            "Suspect "+scene.names[4]+" did not wear the "+scene.animals[0]+" mask and did not have a "+scene.colors[2]+" or "+scene.colors[0]+" shirt.",
-            "Suspect "+scene.names[1]+" did not wear the "+scene.animals[2]+" mask.",
+            "Suspect "+scene.names[4]+" did not wear the "+scene.masks[0]+" mask and did not have a "+scene.colors[2]+" or "+scene.colors[0]+" shirt.",
+            "Suspect "+scene.names[1]+" did not wear the "+scene.masks[2]+" mask.",
             "Suspect "+scene.names[2]+" did not have a "+scene.colors[4]+" shirt."
             ]
         ];

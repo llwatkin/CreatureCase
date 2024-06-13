@@ -68,15 +68,11 @@ class Suspect extends Phaser.GameObjects.GameObject {
     }
 
     change_shirt(newColor) {
-        if (this.get_shirt() == newColor) {
-            this.shirt.setTexture('shirts', 'shirt_white_style'+this.shirtStyle+'.png');
-        } else {
-            this.shirt.setTexture('shirts', 'shirt_'+newColor+'_style'+this.shirtStyle+'.png');
-        }
+        this.shirt.setTexture('shirts', 'shirt_'+newColor+'_style'+this.shirtStyle+'.png');
     }
 
     change_mask(newAnimal) {
-        if (this.animalMask.visible == true && this.get_mask() == newAnimal) {
+        if (newAnimal == "none") {
             this.animalMask.visible = false;
         } else {
             this.animalMask.visible = true;
@@ -98,7 +94,7 @@ class Suspect extends Phaser.GameObjects.GameObject {
     }
 
     change_item(newItem) {
-        if (this.item.visible == true && this.get_item() == newItem) {
+        if (newItem == "none") {
             this.item.visible = false;
         } else {
             this.item.visible = true;

@@ -16,7 +16,7 @@ class Credits extends Phaser.GameObjects.GameObject {
         // Buttons
         this.xButton = scene.add.sprite(750, 65, 'x_grey').setScale(2.0).setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
-                scene.sound.play('click_exit');
+                scene.sound.play('click_soft');
                 // Hide credits
                 this.hide_credits();
                 this.show_button(); // Shows button
@@ -30,7 +30,7 @@ class Credits extends Phaser.GameObjects.GameObject {
             });
         this.openButton = scene.add.sprite(60, 20, 'panel_small').setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
-                scene.sound.play('click_exit');
+                scene.sound.play('click_soft');
                 this.hide_button();
                 this.show_credits();
                 // Hide game elements and pause game

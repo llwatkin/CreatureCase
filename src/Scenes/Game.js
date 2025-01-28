@@ -37,7 +37,7 @@ class Game extends Phaser.Scene {
             [
             [this.colors[4], this.masks[3], this.items[4]], // Suspect at names index 0
             [this.colors[3], this.masks[2], this.items[0]], // Suspect at names index 1
-            [this.colors[2], this.masks[4], this.items[3]], // ect.
+            [this.colors[2], this.masks[4], this.items[3]], // etc.
             [this.colors[1], this.masks[1], this.items[2]],
             [this.colors[0], this.masks[0], this.items[1]]
             ],
